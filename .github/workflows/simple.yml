@@ -1,0 +1,46 @@
+name: CI
+on: 
+ push:
+   branches:
+     - "master"
+     - "feature/**"
+     - "Dev"
+  #this will run all branches results in feature like featurea,featb,featc
+     #branch-ignore -- this will ignore all above branches
+     #tags
+     #tags-ignore -- same as above
+ schedule:
+  - cron: 0 9 * * 1
+ pull_request:
+   types: [closed, reopened, assigned]
+
+   
+     
+     
+    
+jobs:
+  linux-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo 
+          git --version
+          echo
+          whoami
+          echo
+          free -m
+          echo
+          uname -r 
+
+
+  windows-Server: 
+    runs-on: ubuntu-latest
+    needs: ["linux-server"]
+    steps:
+      - name: powershell
+        run: Get-ScriptAnalyzerRule
+        shell: pwsh
