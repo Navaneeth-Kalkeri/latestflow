@@ -5,6 +5,7 @@ on:
      - "master"
      - "feature/**"
      - "Dev"
+     - "release"
   #this will run all branches results in feature like featurea,featb,featc
      #branch-ignore -- this will ignore all above branches
      #tags
