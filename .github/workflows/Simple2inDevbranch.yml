@@ -1,0 +1,14 @@
+name: Second-ci
+on: [push]
+jobs:
+  using-checkout-cmd:
+    runs-on: ubuntu-latest
+    steps:
+        
+      - name: some-script
+        run: |
+        
+          echo
+          ls -a 
+          echo
+          who am i
